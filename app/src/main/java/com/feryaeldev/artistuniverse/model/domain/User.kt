@@ -1,3 +1,3 @@
 package com.feryaeldev.artistuniverse.model.domain
 
-data class User(val name: String)
+data class User(var name: String, var login: Boolean)
