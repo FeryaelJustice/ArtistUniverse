@@ -6,7 +6,5 @@ import com.feryaeldev.artistuniverse.usecases.base.BaseActivityRouter
 
 class OnboardingRouter: BaseActivityRouter {
 
-    override fun intent(activity: Context): Intent {
-        TODO("Not yet implemented")
-    }
+    override fun intent(activity: Context): Intent = Intent(activity, OnboardingActivity::class.java)
 }
