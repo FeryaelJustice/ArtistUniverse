@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.feryaeldev.artistuniverse.databinding.FragmentOnboardingPageBinding
-import com.feryaeldev.artistuniverse.model.OnboardingPage
+import com.feryaeldev.artistuniverse.model.domain.OnboardingPage
 import com.google.gson.Gson
 
 class OnboardingPageFragment : Fragment() {

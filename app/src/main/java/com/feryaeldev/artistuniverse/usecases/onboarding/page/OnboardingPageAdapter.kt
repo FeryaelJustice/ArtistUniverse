@@ -3,7 +3,7 @@ package com.feryaeldev.artistuniverse.usecases.onboarding.page
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.feryaeldev.artistuniverse.model.OnboardingPage
+import com.feryaeldev.artistuniverse.model.domain.OnboardingPage
 
 class OnboardingPageAdapter(
     private val context: AppCompatActivity,

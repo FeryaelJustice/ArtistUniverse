@@ -2,7 +2,7 @@ package com.feryaeldev.artistuniverse.usecases.onboarding
 
 import androidx.lifecycle.ViewModel
 import com.feryaeldev.artistuniverse.R
-import com.feryaeldev.artistuniverse.model.OnboardingPage
+import com.feryaeldev.artistuniverse.model.domain.OnboardingPage
 
 class OnboardingViewModel: ViewModel() {
 
