@@ -1,9 +1,10 @@
-package com.feryaeldev.artistuniverse
+package com.feryaeldev.artistuniverse.usecases.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.Button
+import com.feryaeldev.artistuniverse.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
