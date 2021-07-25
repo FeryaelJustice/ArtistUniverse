@@ -1,4 +1,4 @@
-package com.feryaeldev.artistuniverse.usecases.common
+package com.feryaeldev.artistuniverse.usecases.common.controls
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,7 +15,7 @@ class ProgressBarFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentProgressBarBinding.inflate(inflater, container, false)
         return binding.root
     }
