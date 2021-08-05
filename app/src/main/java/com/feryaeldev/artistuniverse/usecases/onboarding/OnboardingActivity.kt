@@ -2,6 +2,8 @@ package com.feryaeldev.artistuniverse.usecases.onboarding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.feryaeldev.artistuniverse.R
@@ -30,10 +32,18 @@ class OnboardingActivity : AppCompatActivity() {
     }
 
     private fun localize() {
-        TODO("Not yet implemented")
+
     }
 
     private fun setup() {
-        TODO("Not yet implemented")
+        val crashButton = Button(this)
+        crashButton.text = "Crash!"
+        crashButton.setOnClickListener {
+            throw RuntimeException("Test Crash") // Force a crash
+        }
+
+        addContentView(crashButton, ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT))
     }
 }
