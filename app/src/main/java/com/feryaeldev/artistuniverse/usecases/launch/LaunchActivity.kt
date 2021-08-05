@@ -1,20 +1,46 @@
 package com.feryaeldev.artistuniverse.usecases.launch
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.ViewGroup
-import android.widget.Button
-import com.feryaeldev.artistuniverse.R
-import com.feryaeldev.artistuniverse.usecases.onboarding.OnboardingActivity
+import com.feryaeldev.artistuniverse.databinding.ActivityLaunchBinding
+import com.feryaeldev.artistuniverse.model.session.Session
+import com.feryaeldev.artistuniverse.usecases.home.HomeRouter
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.ktx.initialize
+import com.google.firebase.messaging.ktx.messaging
 
 class LaunchActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityLaunchBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_launch)
+        binding = ActivityLaunchBinding.inflate(layoutInflater)
 
-        startActivity(Intent(applicationContext,OnboardingActivity::class.java)).apply {
-            finish()
+        // Content
+        setContentView(binding.root)
+
+        // Setup
+        setup()
+    }
+
+    private fun setup() {
+
+        supportActionBar?.hide()
+
+        Firebase.initialize(applicationContext)
+
+        // Remote notifications
+        Firebase.messaging.isAutoInitEnabled = true
+
+        // Session
+        Session.instance.configure(applicationContext){
+            showHome()
         }
+    }
+
+    private fun showHome() {
+        HomeRouter().launch(applicationContext)
+        finish()
     }
 }
