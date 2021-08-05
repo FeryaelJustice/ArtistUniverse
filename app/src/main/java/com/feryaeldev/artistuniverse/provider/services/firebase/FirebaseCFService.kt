@@ -1,7 +1,8 @@
 package com.feryaeldev.artistuniverse.provider.services.firebase
 
 import com.feryaeldev.artistuniverse.model.domain.User
-import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 enum class DatabaseField(val key: String) {
 
@@ -9,8 +10,9 @@ enum class DatabaseField(val key: String) {
     USERS("users"), ARTISTS("artists"),
 
     // User
-    ID("id"), LOGIN("login"), DISPLAY_NAME("displayName"), PROFILE_IMAGE_URL("profileImageUrl"), OFFLINE_IMAGE_URL(
-        "offlineImageUrl"
+    ID("id"), LOGGED("logged"), USERNAME("username"), NAME("username"), SURNAMES("profileImageUrl"),
+    ACCOUNT_TYPE("accountType"), BIO("bio"), EMAIL("email"), AGE("age"), COUNTRY("country"), PROFILE_IMAGE_URL(
+        "profile_image_url"
     )
 
 }
@@ -19,8 +21,8 @@ object FirebaseCFService {
 
     // Properties
 
-    private val usersRef = FirebaseFirestore.getInstance().collection(DatabaseField.USERS.key)
-    private val artistsRef = FirebaseFirestore.getInstance().collection(DatabaseField.ARTISTS.key)
+    private val usersRef = Firebase.firestore.collection(DatabaseField.USERS.key)
+    private val artistsRef = Firebase.firestore.collection(DatabaseField.ARTISTS.key)
 
     // Services
 

@@ -5,7 +5,9 @@ import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 
 enum class PreferencesKey(val value: String) {
-    AUTH_USER("authUser")
+    AUTH_USER("authUser"),
+    FIREBASE_AUTH_UID("firebaseAuthUid"),
+    ONBOARDING("onboarding")
 }
 
 object PreferencesProvider {

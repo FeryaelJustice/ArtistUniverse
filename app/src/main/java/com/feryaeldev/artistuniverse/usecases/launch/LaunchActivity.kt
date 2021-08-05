@@ -7,7 +7,6 @@ import com.feryaeldev.artistuniverse.model.session.Session
 import com.feryaeldev.artistuniverse.usecases.home.HomeRouter
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.ktx.initialize
-import com.google.firebase.messaging.ktx.messaging
 
 class LaunchActivity : AppCompatActivity() {
 
@@ -30,13 +29,9 @@ class LaunchActivity : AppCompatActivity() {
 
         Firebase.initialize(applicationContext)
 
-        // Remote notifications
-        Firebase.messaging.isAutoInitEnabled = true
-
         // Session
-        Session.instance.configure(applicationContext){
-            showHome()
-        }
+        Session.instance.configure(applicationContext)
+        showHome()
     }
 
     private fun showHome() {
