@@ -5,24 +5,6 @@ import com.feryaeldev.artistuniverse.util.Constants
 import com.google.gson.GsonBuilder
 import com.google.gson.annotations.SerializedName
 
-data class Users(val data: List<User>? = null) {
-
-// Gson
-
-    companion object {
-
-        fun toJson(users: Users): String {
-            return GsonBuilder().setDateFormat(Constants.JSON_DATE_FORMAT).create().toJson(users)
-        }
-
-        fun fromJson(json: String): Users {
-            return GsonBuilder().setDateFormat(Constants.JSON_DATE_FORMAT).create()
-                .fromJson(json, Users::class.java)
-        }
-
-    }
-}
-
 data class User(
     @SerializedName("id")
     val id: String? = null,

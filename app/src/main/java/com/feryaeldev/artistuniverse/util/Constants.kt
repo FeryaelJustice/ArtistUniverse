@@ -13,5 +13,8 @@ object Constants {
 
     // Networks
     const val ARTISTUNIVERSE_URI = "https://artistuniverse.com"
-    const val YOUTUBE_MOUREDEV_URI = "https://www.youtube.com/channel/UCDYgeJeEqB9tMCE0EqcXE3Q"
+    const val YOUTUBE_FERYAELDEV_URI = "https://www.youtube.com/channel/UCDYgeJeEqB9tMCE0EqcXE3Q"
+
+    // Remote notifications
+    const val MAIN_NOTIFICATION_TOPIC = "all"
 }

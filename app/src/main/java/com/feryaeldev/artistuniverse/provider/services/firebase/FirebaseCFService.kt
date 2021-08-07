@@ -22,14 +22,16 @@ object FirebaseCFService {
     // Properties
 
     private val usersRef = Firebase.firestore.collection(DatabaseField.USERS.key)
-    private val artistsRef = Firebase.firestore.collection(DatabaseField.ARTISTS.key)
+    // private val artistsRef = Firebase.firestore.collection(DatabaseField.ARTISTS.key)
 
     // Services
 
     fun save(user: User) {
-        user.logged.let {
-            if (it == true) {
-                print("a")
+        user.logged.let { logged ->
+            if (logged == true) {
+                user.id?.let { id -> usersRef.document(id).set(user).addOnCompleteListener {
+
+                } }
             }
         }
     }
