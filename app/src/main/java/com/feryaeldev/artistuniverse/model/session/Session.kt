@@ -16,7 +16,7 @@ class Session {
 
     // Properties
 
-    private var user: User? = null
+    var user: User? = null
     private var firebaseAuthUid: String? = null
 
     fun configure(context: Context) {
@@ -44,7 +44,7 @@ class Session {
     }
 
     // Log out and clear all
-    private fun clear(context: Context) {
+    fun clear(context: Context, success: () -> Unit) {
         user = null
         firebaseAuthUid = null
         PreferencesProvider.clear(context)
@@ -53,6 +53,8 @@ class Session {
         // Firebase Auth
         Firebase.auth.signOut()
         firebaseAuth(context)
+
+        success()
     }
 
 
